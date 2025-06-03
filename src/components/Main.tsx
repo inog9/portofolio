@@ -135,12 +135,17 @@ function Main() {
         <SectionContent>
           <Grid container spacing={6}>
             <Grid item xs={12} md={6}>
-              <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, mt: 2 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', mb: 4, mt: 2, flexDirection: { xs: 'column', sm: 'row' }, textAlign: { xs: 'center', sm: 'left' } }}>
                 <ProfileAvatar
                   src="https://github.com/inog9.png"
                   alt="Guntur Wahyu Ramadhan"
+                  sx={{
+                    width: { xs: 120, sm: 140, md: 160 },
+                    height: { xs: 120, sm: 140, md: 160 },
+                    mb: { xs: 2, sm: 0 }
+                  }}
                 />
-                <Box sx={{ ml: 3 }}>
+                <Box sx={{ ml: { xs: 0, sm: 3 } }}>
                   <Chip 
                     label="Ranah Security Engineer Transformasi Jiwa" 
                     size="small" 
@@ -149,19 +154,22 @@ function Main() {
                       background: 'rgba(0, 243, 255, 0.1)',
                       border: '1px solid rgba(0, 243, 255, 0.3)',
                       color: '#fff',
-                      fontSize: '0.85rem',
-                      height: '26px'
+                      fontSize: { xs: '0.75rem', sm: '0.85rem' },
+                      height: { xs: '24px', sm: '26px' },
+                      whiteSpace: 'normal',
+                      maxWidth: { xs: '280px', sm: 'none' }
                     }} 
                   />
                   <Typography 
                     variant="h4" 
                     component="h1" 
                     sx={{ 
-                      fontSize: { xs: '1.5rem', sm: '1.75rem', md: '2rem' },
+                      fontSize: { xs: '1.25rem', sm: '1.5rem', md: '2rem' },
                       fontWeight: 600,
                       letterSpacing: '-0.02em',
                       color: '#fff',
-                      lineHeight: 1.2
+                      lineHeight: 1.2,
+                      wordBreak: 'break-word'
                     }}
                   >
                     Guntur Wahyu Ramadhan
