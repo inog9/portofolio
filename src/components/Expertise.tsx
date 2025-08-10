@@ -1,7 +1,7 @@
 import React from "react";
 import '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShieldAlt, faBug, faCode, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faShieldAlt, faBug, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { styled } from '@mui/material/styles';
 import { Box, Container, Typography, Chip, Paper } from '@mui/material';
 import { keyframes } from '@mui/system';
@@ -80,7 +80,7 @@ const Title = styled(Typography)(({ theme }) => ({
 
 const SkillsGrid = styled(Box)(({ theme }) => ({
   display: 'grid',
-  gridTemplateColumns: 'repeat(4, 1fr)',
+  gridTemplateColumns: 'repeat(3, 1fr)',
   gap: theme.spacing(2),
   position: 'relative',
   zIndex: 2,
@@ -123,7 +123,7 @@ const SkillCard = styled(Paper)(({ theme }) => ({
     '&::before': {
       transform: 'translateX(100%)',
     },
-    '& .skill-icon': {
+    '& .icon-wrapper': {
       color: '#00f3ff',
       transform: 'scale(1.1) rotate(10deg)',
     },
@@ -212,20 +212,6 @@ const labelsSecond = [
 ];
 
 const labelsThird = [
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "HTML5",
-    "CSS3",
-    "Node.js",
-    "Express",
-    "MongoDB",
-    "MySQL",
-    "REST APIs",
-    "Git"
-];
-
-const labelsFourth = [
     "Disk Forensics",
     "Memory Analysis",
     "Network Forensics",
@@ -242,10 +228,10 @@ function Expertise() {
             <Title variant="h1">Expertise</Title>
             <SkillsGrid>
                 <SkillCard elevation={0}>
-                    <IconWrapper>
+                    <IconWrapper className="icon-wrapper">
                         <FontAwesomeIcon icon={faShieldAlt} />
                     </IconWrapper>
-                    <SkillTitle>Security Operations Center</SkillTitle>
+                    <SkillTitle className="skill-title">Security Operations Center</SkillTitle>
                     <SkillDescription>
                         Experienced in managing and operating Security Operations Centers (SOC), implementing security monitoring solutions, and responding to security incidents. Proficient in SIEM tools, threat hunting, and security event analysis.
                     </SkillDescription>
@@ -257,10 +243,10 @@ function Expertise() {
                 </SkillCard>
 
                 <SkillCard elevation={0}>
-                    <IconWrapper>
+                    <IconWrapper className="icon-wrapper">
                         <FontAwesomeIcon icon={faBug} />
                     </IconWrapper>
-                    <SkillTitle>Penetration Testing</SkillTitle>
+                    <SkillTitle className="skill-title">Penetration Testing</SkillTitle>
                     <SkillDescription>
                         Skilled in conducting comprehensive security assessments including web application penetration testing, network security testing, and API security testing. Experienced in identifying and exploiting vulnerabilities while providing detailed remediation guidance.
                     </SkillDescription>
@@ -272,30 +258,15 @@ function Expertise() {
                 </SkillCard>
 
                 <SkillCard elevation={0}>
-                    <IconWrapper>
-                        <FontAwesomeIcon icon={faCode} />
-                    </IconWrapper>
-                    <SkillTitle>Web Development</SkillTitle>
-                    <SkillDescription>
-                        Proficient in modern web development technologies and frameworks. Experienced in building secure, responsive, and user-friendly web applications with a focus on security best practices and clean code architecture.
-                    </SkillDescription>
-                    <ChipsContainer>
-                        {labelsThird.map((label, index) => (
-                            <StyledChip key={index} label={label} />
-                        ))}
-                    </ChipsContainer>
-                </SkillCard>
-
-                <SkillCard elevation={0}>
-                    <IconWrapper>
+                    <IconWrapper className="icon-wrapper">
                         <FontAwesomeIcon icon={faSearch} />
                     </IconWrapper>
-                    <SkillTitle>Digital Forensics</SkillTitle>
+                    <SkillTitle className="skill-title">Digital Forensics</SkillTitle>
                     <SkillDescription>
                         Experienced in digital forensics investigations, evidence collection, and analysis. Proficient in various forensic tools and techniques for disk analysis, memory forensics, and network forensics to support incident response and legal proceedings.
                     </SkillDescription>
                     <ChipsContainer>
-                        {labelsFourth.map((label, index) => (
+                        {labelsThird.map((label, index) => (
                             <StyledChip key={index} label={label} />
                         ))}
                     </ChipsContainer>
